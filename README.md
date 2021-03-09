@@ -56,10 +56,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-|     Jump Box | Yes (SSH)         | My IP Address   |
-|     Web-1     |  No (SSH)    Yes (HTTP)               |      My IP Address                |
-|     Web-2          | No (SSH)      Yes (HTTP)              |    My IP Address                 |
-|     ELK      | No (SSH)        Yes (HTTP)             |       My IP Address               |
+|     Jump Box | Yes (SSH)         | SSH with My IP Address   |
+|     Web-1     |  No (SSH)    Yes (HTTP)               |      10.0.0.5                |
+|     Web-2          | No (SSH)      Yes (HTTP)              |    10.0.0.6                 |
+|     ELK      | No (SSH)        Yes (HTTP)             |       10.1.0.4               |
 
 ### Elk Configuration
 
