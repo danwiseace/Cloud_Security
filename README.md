@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Diagram/Server_Diagram.PNG)
+![TODO: Update the path with the name of your diagram](Diagram/Server_Diragram.PNG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the `Elk.yml` file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -36,10 +36,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| Web-1    |    Webserver     |            |        Linux          |
-| Web-2    |  Webserver        |            |    Linux              |
-| ELK    | Network Monitoring System         |            |          Linux        |
+| Jump Box | Gateway  | 10.0.0.4   | Linux            |
+| Web-1    |    Webserver     |    10.0.0.5        |        Linux          |
+| Web-2    |  Webserver        |    10.0.0.6        |    Linux              |
+| ELK    | Network Monitoring System         | 10.1.0.4           |          Linux        |
 
 ### Access Policies
 
@@ -56,10 +56,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes (SSH)         | My IP Address   |
-|     Web-1     |  No (SSH)    Yes (HTTP)               |                      |
-|Web-2          | No (SSH)                    |                      |
-|    ELK      | No (SSH)                     |                      |
+|     Jump Box | Yes (SSH)         | My IP Address   |
+|     Web-1     |  No (SSH)    Yes (HTTP)               |      My IP Address                |
+|     Web-2          | No (SSH)      Yes (HTTP)              |    My IP Address                 |
+|     ELK      | No (SSH)        Yes (HTTP)             |       My IP Address               |
 
 ### Elk Configuration
 
@@ -69,8 +69,9 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Step 1. Install docker.io
+- Step 2. Install pip3
+- Step 3. Install Docker python module
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -79,8 +80,8 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
-  - Web-1:
-  - Web-2:
+  - Web-1: 10.0.0.5
+  - Web-2: 10.0.0.6
   
 We have installed the following Beats on these machines:
 - _Specify which Beats you successfully installed_
@@ -111,4 +112,4 @@ _TODO: Answer the following questions to fill in the blanks:_
   -  https://ipaddress:5601   
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-  - `ansible-playbook <filename.yml>`
+  - `ansible-playbook <filename.yml>` `nano <filename.yml>`
